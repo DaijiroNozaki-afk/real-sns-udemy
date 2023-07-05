@@ -1,3 +1,6 @@
+# myIgnore
+.env
+
 # Logs
 logs
 *.log
