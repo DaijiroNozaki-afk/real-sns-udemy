@@ -17,6 +17,7 @@ mongoose.connect(process.env.MONGOURL)
 });
 
 //ミドルウェア
+app.use(express.json()); // データのやり取りをJSON 形式にする
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
