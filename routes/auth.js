@@ -31,9 +31,9 @@ router.post("/login", async(req, res) => {
         const vailedPassword = req.body.password === user.password;
         if (!vailedPassword) return res.status(400).json("パスワードが違います");
 
-        return res.status(200).json(user);
+        return res.status(200).json(user); //ログイン出来たら、user を返す
     } catch(err) {
-        return res.status(500).json(err);
+        return res.status(500).json(err); //ログイン出来なかったら、err を返す
 
     }
 });
