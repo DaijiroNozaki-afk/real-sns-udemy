@@ -6,6 +6,7 @@ const postRoute = require('./routes/posts');
 const uploadRoute = require('./routes/upload');
 const PORT = 5000;
 const mongoose = require('mongoose');
+const path = require('path');
 require('dotenv').config();
 
 //データベース
@@ -19,6 +20,7 @@ mongoose
   });
 
 //ミドルウェア
+app.use('/images', express.static(path.join(__dirname, 'public/images'))); // public/images へのパスを通す
 app.use(express.json()); // データのやり取りをJSON 形式にする
 app.use('/api/users', userRoute);
 app.use('/api/auth', authRoute);
